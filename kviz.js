@@ -32,7 +32,7 @@ function vykresleniVysledku() {
     for (let i = 0; i < otazky.length; i++ ) {
         let hodnoceniOtazka = document.createElement('h3');
         hodnoceniOtazka.innerText = otazky[i].otazkaText;
-        hodnoceni.appendChild(hodnoceniOtazka);
+        vysledek.appendChild(hodnoceniOtazka);
         let hodnoceniVysledek = document.createElement('div');
         let hodnoceniOdpoved = document.createElement('div');
         if (otazky[i].vysledek === otazky[i].uzivatelovaOdpoved) {
@@ -43,14 +43,14 @@ function vykresleniVysledku() {
             hodnoceniVysledek.innerText = 'Tvoje odpověď: ' + otazky[i].odpovedi[otazky[i].uzivatelovaOdpoved];
             hodnoceniOdpoved.innerText = 'Správná odpověď: ' + otazky[i].odpovedi[otazky[i].vysledek];
         }
-    hodnoceni.appendChild(hodnoceniVysledek);
-    hodnoceni.appendChild(hodnoceniOdpoved);
+    vysledek.appendChild(hodnoceniVysledek);
+    vysledek.appendChild(hodnoceniOdpoved);
     }
-    vysledek.appendChild(hodnoceni);
+    //vysledek.appendChild(hodnoceni);
     let celkovaUspesnost = document.createElement('h2');
     celkovaUspesnost.innerText = 'Správně ' + pocetSpravnychOdpovedi + ' ze ' + otazky.length + ' otázek. ' + 'Úspěšnost ' + Math.floor((pocetSpravnychOdpovedi/otazky.length) * 100) + ' %.';
 
-    hodnoceni.appendChild(celkovaUspesnost);
+    vysledek.appendChild(celkovaUspesnost);
 };
 
 let otazka1 = {

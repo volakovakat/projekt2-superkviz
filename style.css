@@ -116,3 +116,7 @@ h1 {
 	font-size: 36px;
 	color: var(--cervena);
 }
+
+.vysledek div {
+	margin: 10px 0;
+}
